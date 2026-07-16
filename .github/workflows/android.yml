@@ -26,9 +26,14 @@ jobs:
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug
-
+- name: Verify APK
+  run: |
+    unzip -l app/build/outputs/apk/debug/app-debug.apk | head -100
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Lens-Hunt-Debug-APK
           path: app/build/outputs/apk/debug/*.apk
+          - name: Verify Signature
+  run: |
+    $ANDROID_HOME/build-tools/*/apksigner verify --verbose app/build/outputs/apk/debug/app-debug.apk
