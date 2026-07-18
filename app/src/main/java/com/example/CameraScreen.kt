@@ -189,6 +189,7 @@ fun CameraPreviewContent(viewModel: MainViewModel) {
     val lifecycleOwner = LocalLifecycleOwner.current
     val faceBounds by viewModel.faceBounds.collectAsState()
     val matchedCharacter by viewModel.matchedCharacter.collectAsState()
+    val matchSimilarity by viewModel.matchSimilarity.collectAsState()
     val isMatching by viewModel.isMatching.collectAsState()
 
     var imageWidth by remember { mutableIntStateOf(1) }
@@ -231,13 +232,10 @@ fun CameraPreviewContent(viewModel: MainViewModel) {
                                     }
 
                                     viewModel.updateFaceBounds(bounds)
-                                    
-                                    if (!isMatching) {
-                                        val bitmap = imageProxy.toBitmap()
-                                        if (bitmap != null) {
-                                            val cropped = bitmap.crop(bounds)
-                                            viewModel.matchFace(cropped)
-                                        }
+
+                                    val axes = FaceAxesExtractor.extract(face)
+                                    if (axes != null) {
+                                        viewModel.matchFace(axes)
                                     }
                                     imageProxy.close()
                                 }
@@ -330,9 +328,11 @@ fun CameraPreviewContent(viewModel: MainViewModel) {
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            text = if (matchedCharacter != null) "MATCH FOUND" else "ANALYZING", 
-                            color = Color.White, 
-                            fontSize = 12.sp, 
+                            text = if (matchedCharacter != null) {
+                                "MATCH FOUND" + (matchSimilarity?.let { " · $it%" } ?: "")
+                            } else "ANALYZING",
+                            color = Color.White,
+                            fontSize = 12.sp,
                             fontWeight = FontWeight.Bold
                         )
                         Spacer(Modifier.width(8.dp))

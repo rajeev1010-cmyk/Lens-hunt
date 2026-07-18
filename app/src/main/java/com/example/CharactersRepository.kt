@@ -8,10 +8,27 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 @JsonClass(generateAdapter = true)
+data class VisualAxes(
+    val faceLength: Double = 0.5,
+    val jawSharpness: Double = 0.5,
+    val eyeNarrowness: Double = 0.5,
+    val browWeight: Double = 0.5,
+    val hairDarkness: Double = 0.5,
+    val hairVolume: Double = 0.5,
+    val expressionNeutrality: Double = 0.5,
+    val symmetry: Double = 0.6,
+    val contrast: Double = 0.5,
+    val angularity: Double = 0.5,
+    val glasses: Double = 0.0,
+    val warmth: Double = 0.5
+)
+
+@JsonClass(generateAdapter = true)
 data class CharacterEntry(
     val id: String,
     val name: String,
-    val series: String
+    val series: String,
+    val profile: VisualAxes = VisualAxes()
 )
 
 class CharactersRepository(private val context: Context) {

@@ -1,33 +1,3802 @@
 [
-  { "id": "levi-ackerman", "name": "Levi Ackerman", "series": "Attack on Titan" },
-  { "id": "gojo-satoru", "name": "Gojo Satoru", "series": "Jujutsu Kaisen" },
-  { "id": "sasuke-uchiha", "name": "Sasuke Uchiha", "series": "Naruto" },
-  { "id": "mikasa-ackerman", "name": "Mikasa Ackerman", "series": "Attack on Titan" },
-  { "id": "sung-jinwoo", "name": "Sung Jinwoo", "series": "Solo Leveling" },
-  { "id": "tanjiro-kamado", "name": "Tanjiro Kamado", "series": "Demon Slayer" },
-  { "id": "naruto-uzumaki", "name": "Naruto Uzumaki", "series": "Naruto" },
-  { "id": "violet-evergarden", "name": "Violet Evergarden", "series": "Violet Evergarden" },
-  { "id": "edward-elric", "name": "Edward Elric", "series": "Fullmetal Alchemist" },
-  { "id": "goku", "name": "Son Goku", "series": "Dragon Ball" },
-  { "id": "monkey-d-luffy", "name": "Monkey D. Luffy", "series": "One Piece" },
-  { "id": "l-lawliet", "name": "L Lawliet", "series": "Death Note" },
-  { "id": "sailor-moon", "name": "Usagi Tsukino (Sailor Moon)", "series": "Sailor Moon" },
-  { "id": "spike-spiegel", "name": "Spike Spiegel", "series": "Cowboy Bebop" },
-  { "id": "nezuko-kamado", "name": "Nezuko Kamado", "series": "Demon Slayer" },
-  { "id": "kaneki-ken", "name": "Ken Kaneki", "series": "Tokyo Ghoul" },
-  { "id": "zero-two", "name": "Zero Two", "series": "DARLING in the FRANXX" },
-  { "id": "cloud-strife", "name": "Cloud Strife", "series": "Final Fantasy VII" },
-  { "id": "aloy", "name": "Aloy", "series": "Horizon" },
-  { "id": "link", "name": "Link", "series": "The Legend of Zelda" },
-  { "id": "2b", "name": "2B", "series": "NieR: Automata" },
-  { "id": "batman", "name": "Batman", "series": "DC Comics" },
-  { "id": "spider-man", "name": "Spider-Man", "series": "Marvel Comics" },
-  { "id": "miles-morales", "name": "Miles Morales", "series": "Spider-Verse" },
-  { "id": "elsa", "name": "Elsa", "series": "Frozen" },
-  { "id": "eren-yeager", "name": "Eren Yeager", "series": "Attack on Titan" },
-  { "id": "vegeta", "name": "Vegeta", "series": "Dragon Ball" },
-  { "id": "ichigo-kurosaki", "name": "Ichigo Kurosaki", "series": "Bleach" },
-  { "id": "rukia-kuchiki", "name": "Rukia Kuchiki", "series": "Bleach" },
-  { "id": "killua-zoldyck", "name": "Killua Zoldyck", "series": "Hunter x Hunter" },
-  { "id": "gon-freecss", "name": "Gon Freecss", "series": "Hunter x Hunter" }
+  {
+    "id": "levi-ackerman",
+    "name": "Levi Ackerman",
+    "series": "Attack on Titan",
+    "profile": {
+      "faceLength": 0.62,
+      "jawSharpness": 0.85,
+      "eyeNarrowness": 0.9,
+      "browWeight": 0.7,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.25,
+      "expressionNeutrality": 0.95,
+      "symmetry": 0.6,
+      "contrast": 0.7,
+      "angularity": 0.85,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "gojo-satoru",
+    "name": "Gojo Satoru",
+    "series": "Jujutsu Kaisen",
+    "profile": {
+      "faceLength": 0.7,
+      "jawSharpness": 0.7,
+      "eyeNarrowness": 0.6,
+      "browWeight": 0.3,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.7,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.6,
+      "contrast": 0.85,
+      "angularity": 0.7,
+      "glasses": 0.9,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "sasuke-uchiha",
+    "name": "Sasuke Uchiha",
+    "series": "Naruto",
+    "profile": {
+      "faceLength": 0.65,
+      "jawSharpness": 0.8,
+      "eyeNarrowness": 0.8,
+      "browWeight": 0.6,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.6,
+      "contrast": 0.7,
+      "angularity": 0.8,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "mikasa-ackerman",
+    "name": "Mikasa Ackerman",
+    "series": "Attack on Titan",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.65,
+      "browWeight": 0.55,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.85,
+      "symmetry": 0.75,
+      "contrast": 0.6,
+      "angularity": 0.6,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "sung-jinwoo",
+    "name": "Sung Jinwoo",
+    "series": "Solo Leveling",
+    "profile": {
+      "faceLength": 0.8,
+      "jawSharpness": 0.85,
+      "eyeNarrowness": 0.85,
+      "browWeight": 0.6,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.6,
+      "contrast": 0.8,
+      "angularity": 0.85,
+      "glasses": 0.0,
+      "warmth": 0.2
+    }
+  },
+  {
+    "id": "tanjiro-kamado",
+    "name": "Tanjiro Kamado",
+    "series": "Demon Slayer",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.5,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.65,
+      "contrast": 0.6,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.75
+    }
+  },
+  {
+    "id": "naruto-uzumaki",
+    "name": "Naruto Uzumaki",
+    "series": "Naruto",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.45,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.8,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.6,
+      "contrast": 0.75,
+      "angularity": 0.6,
+      "glasses": 0.0,
+      "warmth": 0.9
+    }
+  },
+  {
+    "id": "violet-evergarden",
+    "name": "Violet Evergarden",
+    "series": "Violet Evergarden",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.3,
+      "hairDarkness": 0.2,
+      "hairVolume": 0.75,
+      "expressionNeutrality": 0.9,
+      "symmetry": 0.9,
+      "contrast": 0.5,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "edward-elric",
+    "name": "Edward Elric",
+    "series": "Fullmetal Alchemist",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.55,
+      "hairDarkness": 0.25,
+      "hairVolume": 0.65,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.6,
+      "contrast": 0.8,
+      "angularity": 0.6,
+      "glasses": 0.0,
+      "warmth": 0.8
+    }
+  },
+  {
+    "id": "goku",
+    "name": "Son Goku",
+    "series": "Dragon Ball",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.5,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.95,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.6,
+      "contrast": 0.75,
+      "angularity": 0.7,
+      "glasses": 0.0,
+      "warmth": 0.85
+    }
+  },
+  {
+    "id": "monkey-d-luffy",
+    "name": "Monkey D. Luffy",
+    "series": "One Piece",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.4,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.05,
+      "symmetry": 0.6,
+      "contrast": 0.7,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.8
+    }
+  },
+  {
+    "id": "l-lawliet",
+    "name": "L Lawliet",
+    "series": "Death Note",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.35,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.75,
+      "expressionNeutrality": 0.85,
+      "symmetry": 0.4,
+      "contrast": 0.9,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.2
+    }
+  },
+  {
+    "id": "sailor-moon",
+    "name": "Usagi Tsukino (Sailor Moon)",
+    "series": "Sailor Moon",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.2,
+      "eyeNarrowness": 0.05,
+      "browWeight": 0.3,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.95,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.85,
+      "contrast": 0.65,
+      "angularity": 0.15,
+      "glasses": 0.0,
+      "warmth": 0.8
+    }
+  },
+  {
+    "id": "spike-spiegel",
+    "name": "Spike Spiegel",
+    "series": "Cowboy Bebop",
+    "profile": {
+      "faceLength": 0.75,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.7,
+      "browWeight": 0.45,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.8,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.45,
+      "contrast": 0.55,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "nezuko-kamado",
+    "name": "Nezuko Kamado",
+    "series": "Demon Slayer",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.25,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.35,
+      "hairDarkness": 0.75,
+      "hairVolume": 0.85,
+      "expressionNeutrality": 0.45,
+      "symmetry": 0.8,
+      "contrast": 0.6,
+      "angularity": 0.2,
+      "glasses": 0.0,
+      "warmth": 0.75
+    }
+  },
+  {
+    "id": "kaneki-ken",
+    "name": "Ken Kaneki",
+    "series": "Tokyo Ghoul",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.35,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.65,
+      "symmetry": 0.5,
+      "contrast": 0.9,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.25
+    }
+  },
+  {
+    "id": "zero-two",
+    "name": "Zero Two",
+    "series": "DARLING in the FRANXX",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.35,
+      "hairDarkness": 0.2,
+      "hairVolume": 0.9,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.75,
+      "contrast": 0.6,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.7
+    }
+  },
+  {
+    "id": "cloud-strife",
+    "name": "Cloud Strife",
+    "series": "Final Fantasy VII",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.7,
+      "eyeNarrowness": 0.55,
+      "browWeight": 0.45,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.9,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.6,
+      "contrast": 0.75,
+      "angularity": 0.85,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "aloy",
+    "name": "Aloy",
+    "series": "Horizon",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.6,
+      "hairDarkness": 0.45,
+      "hairVolume": 0.9,
+      "expressionNeutrality": 0.45,
+      "symmetry": 0.6,
+      "contrast": 0.6,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.8
+    }
+  },
+  {
+    "id": "link",
+    "name": "Link",
+    "series": "The Legend of Zelda",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.4,
+      "hairDarkness": 0.2,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.75,
+      "contrast": 0.55,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "2b",
+    "name": "2B",
+    "series": "NieR: Automata",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.9,
+      "symmetry": 0.85,
+      "contrast": 0.95,
+      "angularity": 0.45,
+      "glasses": 0.85,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "batman",
+    "name": "Batman",
+    "series": "DC Comics",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.9,
+      "eyeNarrowness": 0.85,
+      "browWeight": 0.7,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.9,
+      "symmetry": 0.8,
+      "contrast": 0.9,
+      "angularity": 0.9,
+      "glasses": 0.0,
+      "warmth": 0.2
+    }
+  },
+  {
+    "id": "spider-man",
+    "name": "Spider-Man",
+    "series": "Marvel Comics",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.4,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.8,
+      "contrast": 0.85,
+      "angularity": 0.5,
+      "glasses": 0.6,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "miles-morales",
+    "name": "Miles Morales",
+    "series": "Spider-Verse",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.6,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.7,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.6,
+      "contrast": 0.8,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.7
+    }
+  },
+  {
+    "id": "elsa",
+    "name": "Elsa",
+    "series": "Frozen",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.35,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.7,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.25
+    }
+  },
+  {
+    "id": "eren-yeager",
+    "name": "Eren Yeager",
+    "series": "Attack on Titan",
+    "profile": {
+      "faceLength": 0.58,
+      "jawSharpness": 0.75,
+      "eyeNarrowness": 0.55,
+      "browWeight": 0.65,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.7,
+      "contrast": 0.55,
+      "angularity": 0.7,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "vegeta",
+    "name": "Vegeta",
+    "series": "Dragon Ball",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.7,
+      "eyeNarrowness": 0.6,
+      "browWeight": 0.8,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.75,
+      "expressionNeutrality": 0.5,
+      "symmetry": 0.75,
+      "contrast": 0.7,
+      "angularity": 0.8,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "ichigo-kurosaki",
+    "name": "Ichigo Kurosaki",
+    "series": "Bleach",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.45,
+      "browWeight": 0.75,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.65,
+      "contrast": 0.8,
+      "angularity": 0.6,
+      "glasses": 0.0,
+      "warmth": 0.7
+    }
+  },
+  {
+    "id": "rukia-kuchiki",
+    "name": "Rukia Kuchiki",
+    "series": "Bleach",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.5,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.85,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "killua-zoldyck",
+    "name": "Killua Zoldyck",
+    "series": "Hunter x Hunter",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.4,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.65,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.7,
+      "contrast": 0.6,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "gon-freecss",
+    "name": "Gon Freecss",
+    "series": "Hunter x Hunter",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.35,
+      "hairDarkness": 0.6,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.7,
+      "contrast": 0.5,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "izuku-midoriya",
+    "name": "Izuku Midoriya",
+    "series": "My Hero Academia",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.45,
+      "hairDarkness": 0.55,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.75,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "katsuki-bakugo",
+    "name": "Katsuki Bakugo",
+    "series": "My Hero Academia",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.65,
+      "eyeNarrowness": 0.55,
+      "browWeight": 0.7,
+      "hairDarkness": 0.2,
+      "hairVolume": 0.7,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.6,
+      "contrast": 0.7,
+      "angularity": 0.75,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "shoto-todoroki",
+    "name": "Shoto Todoroki",
+    "series": "My Hero Academia",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.45,
+      "hairDarkness": 0.45,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.5,
+      "contrast": 0.75,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "denji",
+    "name": "Denji",
+    "series": "Chainsaw Man",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.4,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.55,
+      "contrast": 0.65,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "power",
+    "name": "Power",
+    "series": "Chainsaw Man",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.35,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.65,
+      "contrast": 0.6,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "makima",
+    "name": "Makima",
+    "series": "Chainsaw Man",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.85,
+      "symmetry": 0.9,
+      "contrast": 0.5,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "anya-forger",
+    "name": "Anya Forger",
+    "series": "Spy x Family",
+    "profile": {
+      "faceLength": 0.2,
+      "jawSharpness": 0.15,
+      "eyeNarrowness": 0.05,
+      "browWeight": 0.5,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.1,
+      "glasses": 0.0,
+      "warmth": 0.7
+    }
+  },
+  {
+    "id": "loid-forger",
+    "name": "Loid Forger",
+    "series": "Spy x Family",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.4,
+      "hairDarkness": 0.75,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.85,
+      "contrast": 0.55,
+      "angularity": 0.45,
+      "glasses": 0.85,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "yor-forger",
+    "name": "Yor Forger",
+    "series": "Spy x Family",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.4,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.65,
+      "symmetry": 0.85,
+      "contrast": 0.65,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "rimuru-tempest",
+    "name": "Rimuru Tempest",
+    "series": "That Time I Got Reincarnated as a Slime",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.3,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.85,
+      "contrast": 0.45,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "ainz-ooal-gown",
+    "name": "Ainz Ooal Gown",
+    "series": "Overlord",
+    "profile": {
+      "faceLength": 0.7,
+      "jawSharpness": 0.9,
+      "eyeNarrowness": 0.8,
+      "browWeight": 0.2,
+      "hairDarkness": 0.0,
+      "hairVolume": 0.0,
+      "expressionNeutrality": 0.95,
+      "symmetry": 0.95,
+      "contrast": 0.85,
+      "angularity": 0.85,
+      "glasses": 0.0,
+      "warmth": 0.1
+    }
+  },
+  {
+    "id": "senku-ishigami",
+    "name": "Senku Ishigami",
+    "series": "Dr. Stone",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.45,
+      "browWeight": 0.5,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.7,
+      "contrast": 0.6,
+      "angularity": 0.65,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "roy-mustang",
+    "name": "Roy Mustang",
+    "series": "Fullmetal Alchemist",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.5,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.8,
+      "contrast": 0.6,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "riza-hawkeye",
+    "name": "Riza Hawkeye",
+    "series": "Fullmetal Alchemist",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.45,
+      "browWeight": 0.45,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.85,
+      "contrast": 0.55,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "kakashi-hatake",
+    "name": "Kakashi Hatake",
+    "series": "Naruto",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.4,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.7,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.5,
+      "contrast": 0.6,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "itachi-uchiha",
+    "name": "Itachi Uchiha",
+    "series": "Naruto",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.4,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.85,
+      "symmetry": 0.85,
+      "contrast": 0.6,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "hinata-hyuga",
+    "name": "Hinata Hyuga",
+    "series": "Naruto",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.35,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.5,
+      "symmetry": 0.75,
+      "contrast": 0.45,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "roronoa-zoro",
+    "name": "Roronoa Zoro",
+    "series": "One Piece",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.65,
+      "eyeNarrowness": 0.45,
+      "browWeight": 0.55,
+      "hairDarkness": 0.2,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.55,
+      "contrast": 0.6,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "nami",
+    "name": "Nami",
+    "series": "One Piece",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.4,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.7,
+      "contrast": 0.55,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "nico-robin",
+    "name": "Nico Robin",
+    "series": "One Piece",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.35,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.8,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "shanks",
+    "name": "Shanks",
+    "series": "One Piece",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.4,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.45,
+      "symmetry": 0.55,
+      "contrast": 0.55,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "motoko-kusanagi",
+    "name": "Motoko Kusanagi",
+    "series": "Ghost in the Shell",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.45,
+      "browWeight": 0.3,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.9,
+      "symmetry": 0.9,
+      "contrast": 0.6,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.25
+    }
+  },
+  {
+    "id": "faye-valentine",
+    "name": "Faye Valentine",
+    "series": "Cowboy Bebop",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.35,
+      "hairDarkness": 0.4,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.7,
+      "contrast": 0.7,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "rei-ayanami",
+    "name": "Rei Ayanami",
+    "series": "Neon Genesis Evangelion",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.25,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.95,
+      "symmetry": 0.95,
+      "contrast": 0.65,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.25
+    }
+  },
+  {
+    "id": "asuka-langley-soryu",
+    "name": "Asuka Langley Soryu",
+    "series": "Neon Genesis Evangelion",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.5,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.75,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.6,
+      "contrast": 0.75,
+      "angularity": 0.6,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "shinji-ikari",
+    "name": "Shinji Ikari",
+    "series": "Neon Genesis Evangelion",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.7,
+      "contrast": 0.45,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "guts",
+    "name": "Guts",
+    "series": "Berserk",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.75,
+      "eyeNarrowness": 0.55,
+      "browWeight": 0.65,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.45,
+      "contrast": 0.8,
+      "angularity": 0.75,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "griffith",
+    "name": "Griffith",
+    "series": "Berserk",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.3,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.9,
+      "contrast": 0.55,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "jotaro-kujo",
+    "name": "Jotaro Kujo",
+    "series": "JoJo's Bizarre Adventure",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.5,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.9,
+      "symmetry": 0.8,
+      "contrast": 0.7,
+      "angularity": 0.55,
+      "glasses": 0.9,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "dio-brando",
+    "name": "Dio Brando",
+    "series": "JoJo's Bizarre Adventure",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.35,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.7,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.85,
+      "contrast": 0.7,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "inuyasha",
+    "name": "Inuyasha",
+    "series": "Inuyasha",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.4,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.65,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.65,
+      "contrast": 0.65,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "kagome-higurashi",
+    "name": "Kagome Higurashi",
+    "series": "Inuyasha",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.35,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.75,
+      "contrast": 0.5,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "rin-tohsaka",
+    "name": "Rin Tohsaka",
+    "series": "Fate/stay night",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.45,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.45,
+      "symmetry": 0.85,
+      "contrast": 0.6,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "saber",
+    "name": "Saber",
+    "series": "Fate/stay night",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.35,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.9,
+      "contrast": 0.55,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "natsu-dragneel",
+    "name": "Natsu Dragneel",
+    "series": "Fairy Tail",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.4,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.65,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.65,
+      "contrast": 0.65,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.8
+    }
+  },
+  {
+    "id": "erza-scarlet",
+    "name": "Erza Scarlet",
+    "series": "Fairy Tail",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.45,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.8,
+      "contrast": 0.65,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "saitama",
+    "name": "Saitama",
+    "series": "One Punch Man",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.2,
+      "hairDarkness": 0.0,
+      "hairVolume": 0.0,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.9,
+      "contrast": 0.55,
+      "angularity": 0.2,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "genos",
+    "name": "Genos",
+    "series": "One Punch Man",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.45,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.5,
+      "symmetry": 0.85,
+      "contrast": 0.65,
+      "angularity": 0.6,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "tatsumaki",
+    "name": "Tatsumaki",
+    "series": "One Punch Man",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.5,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.85,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.7,
+      "contrast": 0.55,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "touka-kirishima",
+    "name": "Touka Kirishima",
+    "series": "Tokyo Ghoul",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.45,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.45,
+      "symmetry": 0.7,
+      "contrast": 0.65,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "lelouch-lamperouge",
+    "name": "Lelouch Lamperouge",
+    "series": "Code Geass",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.4,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.85,
+      "contrast": 0.65,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "c-c",
+    "name": "C.C.",
+    "series": "Code Geass",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.2,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.85,
+      "contrast": 0.6,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "subaru-natsuki",
+    "name": "Subaru Natsuki",
+    "series": "Re:Zero",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.4,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.7,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "emilia",
+    "name": "Emilia",
+    "series": "Re:Zero",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.3,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.45,
+      "symmetry": 0.9,
+      "contrast": 0.5,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "all-might",
+    "name": "All Might",
+    "series": "My Hero Academia",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.4,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.8,
+      "contrast": 0.65,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.75
+    }
+  },
+  {
+    "id": "ochaco-uraraka",
+    "name": "Ochaco Uraraka",
+    "series": "My Hero Academia",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.35,
+      "hairDarkness": 0.55,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.7
+    }
+  },
+  {
+    "id": "tomura-shigaraki",
+    "name": "Tomura Shigaraki",
+    "series": "My Hero Academia",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.3,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.35,
+      "contrast": 0.6,
+      "angularity": 0.6,
+      "glasses": 0.0,
+      "warmth": 0.2
+    }
+  },
+  {
+    "id": "yuji-itadori",
+    "name": "Yuji Itadori",
+    "series": "Jujutsu Kaisen",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.4,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.75,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "megumi-fushiguro",
+    "name": "Megumi Fushiguro",
+    "series": "Jujutsu Kaisen",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.4,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "nobara-kugisaki",
+    "name": "Nobara Kugisaki",
+    "series": "Jujutsu Kaisen",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.45,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.7,
+      "contrast": 0.65,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "sukuna",
+    "name": "Sukuna",
+    "series": "Jujutsu Kaisen",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.7,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.5,
+      "hairDarkness": 0.7,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.6,
+      "contrast": 0.75,
+      "angularity": 0.7,
+      "glasses": 0.0,
+      "warmth": 0.15
+    }
+  },
+  {
+    "id": "nanami-kento",
+    "name": "Nanami Kento",
+    "series": "Jujutsu Kaisen",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.4,
+      "hairDarkness": 0.2,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.65,
+      "symmetry": 0.8,
+      "contrast": 0.55,
+      "angularity": 0.4,
+      "glasses": 0.8,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "zenitsu-agatsuma",
+    "name": "Zenitsu Agatsuma",
+    "series": "Demon Slayer",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.3,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.6,
+      "contrast": 0.65,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "inosuke-hashibira",
+    "name": "Inosuke Hashibira",
+    "series": "Demon Slayer",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.3,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.5,
+      "contrast": 0.6,
+      "angularity": 0.65,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "giyu-tomioka",
+    "name": "Giyu Tomioka",
+    "series": "Demon Slayer",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.45,
+      "browWeight": 0.3,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.85,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "muzan-kibutsuji",
+    "name": "Muzan Kibutsuji",
+    "series": "Demon Slayer",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.35,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.95,
+      "contrast": 0.6,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.15
+    }
+  },
+  {
+    "id": "hinata-shoyo",
+    "name": "Hinata Shoyo",
+    "series": "Haikyuu!!",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.35,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.7,
+      "contrast": 0.6,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.75
+    }
+  },
+  {
+    "id": "kageyama-tobio",
+    "name": "Kageyama Tobio",
+    "series": "Haikyuu!!",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.5,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.75,
+      "contrast": 0.55,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "isagi-yoichi",
+    "name": "Isagi Yoichi",
+    "series": "Blue Lock",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.45,
+      "browWeight": 0.4,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.75,
+      "contrast": 0.55,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "shigeo-kageyama",
+    "name": "Shigeo Kageyama",
+    "series": "Mob Psycho 100",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.25,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.25,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.25,
+      "expressionNeutrality": 0.85,
+      "symmetry": 0.85,
+      "contrast": 0.5,
+      "angularity": 0.2,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "reigen-arataka",
+    "name": "Reigen Arataka",
+    "series": "Mob Psycho 100",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.4,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.75,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "thorfinn",
+    "name": "Thorfinn",
+    "series": "Vinland Saga",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.4,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.65,
+      "contrast": 0.55,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "atsushi-nakajima",
+    "name": "Atsushi Nakajima",
+    "series": "Bungou Stray Dogs",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.35,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.65,
+      "contrast": 0.5,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "dazai-osamu",
+    "name": "Dazai Osamu",
+    "series": "Bungou Stray Dogs",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.5,
+      "symmetry": 0.75,
+      "contrast": 0.45,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "hisoka-morow",
+    "name": "Hisoka Morow",
+    "series": "Hunter x Hunter",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.8,
+      "contrast": 0.65,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "kurapika",
+    "name": "Kurapika",
+    "series": "Hunter x Hunter",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.35,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.85,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "armin-arlert",
+    "name": "Armin Arlert",
+    "series": "Attack on Titan",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.75,
+      "contrast": 0.45,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "historia-reiss",
+    "name": "Historia Reiss",
+    "series": "Attack on Titan",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "vash-the-stampede",
+    "name": "Vash the Stampede",
+    "series": "Trigun",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.35,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.65,
+      "contrast": 0.6,
+      "angularity": 0.4,
+      "glasses": 0.85,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "mugen",
+    "name": "Mugen",
+    "series": "Samurai Champloo",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.35,
+      "hairDarkness": 0.7,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.4,
+      "contrast": 0.55,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "jin",
+    "name": "Jin",
+    "series": "Samurai Champloo",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.35,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.85,
+      "contrast": 0.5,
+      "angularity": 0.4,
+      "glasses": 0.8,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "okabe-rintaro",
+    "name": "Okabe Rintaro",
+    "series": "Steins;Gate",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.4,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.7,
+      "contrast": 0.55,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "kurisu-makise",
+    "name": "Kurisu Makise",
+    "series": "Steins;Gate",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.4,
+      "hairDarkness": 0.45,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "aki-hayakawa",
+    "name": "Aki Hayakawa",
+    "series": "Chainsaw Man",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.4,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.7,
+      "contrast": 0.5,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "sanji",
+    "name": "Sanji",
+    "series": "One Piece",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.4,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.75,
+      "contrast": 0.55,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "tony-tony-chopper",
+    "name": "Tony Tony Chopper",
+    "series": "One Piece",
+    "profile": {
+      "faceLength": 0.2,
+      "jawSharpness": 0.1,
+      "eyeNarrowness": 0.05,
+      "browWeight": 0.2,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.85,
+      "contrast": 0.5,
+      "angularity": 0.1,
+      "glasses": 0.0,
+      "warmth": 0.8
+    }
+  },
+  {
+    "id": "piccolo",
+    "name": "Piccolo",
+    "series": "Dragon Ball",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.5,
+      "hairDarkness": 0.0,
+      "hairVolume": 0.0,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.85,
+      "contrast": 0.6,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "frieza",
+    "name": "Frieza",
+    "series": "Dragon Ball",
+    "profile": {
+      "faceLength": 0.6,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.2,
+      "hairDarkness": 0.0,
+      "hairVolume": 0.0,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.9,
+      "contrast": 0.65,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.1
+    }
+  },
+  {
+    "id": "sakura-haruno",
+    "name": "Sakura Haruno",
+    "series": "Naruto",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.4,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.8,
+      "contrast": 0.55,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "gaara",
+    "name": "Gaara",
+    "series": "Naruto",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.25,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.8,
+      "contrast": 0.65,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "might-guy",
+    "name": "Might Guy",
+    "series": "Naruto",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.8,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.85,
+      "contrast": 0.7,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.75
+    }
+  },
+  {
+    "id": "alphonse-elric",
+    "name": "Alphonse Elric",
+    "series": "Fullmetal Alchemist",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.1,
+      "hairDarkness": 0.0,
+      "hairVolume": 0.0,
+      "expressionNeutrality": 0.95,
+      "symmetry": 0.95,
+      "contrast": 0.55,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "asta",
+    "name": "Asta",
+    "series": "Black Clover",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.5,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.65,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.65,
+      "contrast": 0.6,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "yuno",
+    "name": "Yuno",
+    "series": "Black Clover",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.35,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.85,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "tetsuo-shima",
+    "name": "Tetsuo Shima",
+    "series": "Akira",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.4,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.5,
+      "contrast": 0.65,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "sakura-kinomoto",
+    "name": "Sakura Kinomoto",
+    "series": "Cardcaptor Sakura",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.2,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.3,
+      "hairDarkness": 0.35,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.15,
+      "glasses": 0.0,
+      "warmth": 0.75
+    }
+  },
+  {
+    "id": "tohru-honda",
+    "name": "Tohru Honda",
+    "series": "Fruits Basket",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.25,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.3,
+      "hairDarkness": 0.45,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.8,
+      "contrast": 0.45,
+      "angularity": 0.2,
+      "glasses": 0.0,
+      "warmth": 0.8
+    }
+  },
+  {
+    "id": "yusuke-urameshi",
+    "name": "Yusuke Urameshi",
+    "series": "Yu Yu Hakusho",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.5,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.7,
+      "contrast": 0.55,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "hiei",
+    "name": "Hiei",
+    "series": "Yu Yu Hakusho",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.35,
+      "hairDarkness": 0.75,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.7,
+      "contrast": 0.65,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.25
+    }
+  },
+  {
+    "id": "kenshin-himura",
+    "name": "Kenshin Himura",
+    "series": "Rurouni Kenshin",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.6,
+      "contrast": 0.6,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "gintoki-sakata",
+    "name": "Gintoki Sakata",
+    "series": "Gintama",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.55,
+      "browWeight": 0.3,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.65,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.55,
+      "contrast": 0.5,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "kaguya-shinomiya",
+    "name": "Kaguya Shinomiya",
+    "series": "Kaguya-sama: Love is War",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.35,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.9,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "frieren",
+    "name": "Frieren",
+    "series": "Frieren: Beyond Journey's End",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.25,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.9,
+      "contrast": 0.45,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "ai-hoshino",
+    "name": "Ai Hoshino",
+    "series": "Oshi no Ko",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.9,
+      "contrast": 0.6,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "tamaki-suoh",
+    "name": "Tamaki Suoh",
+    "series": "Ouran High School Host Club",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.35,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.8,
+      "contrast": 0.55,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.7
+    }
+  },
+  {
+    "id": "haruhi-fujioka",
+    "name": "Haruhi Fujioka",
+    "series": "Ouran High School Host Club",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.3,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.25,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.75,
+      "contrast": 0.45,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "nana-osaki",
+    "name": "Nana Osaki",
+    "series": "Nana",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.4,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.45,
+      "symmetry": 0.65,
+      "contrast": 0.7,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "nana-komatsu",
+    "name": "Nana Komatsu",
+    "series": "Nana",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.3,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.75,
+      "contrast": 0.5,
+      "angularity": 0.2,
+      "glasses": 0.0,
+      "warmth": 0.7
+    }
+  },
+  {
+    "id": "ryuji-takasu",
+    "name": "Ryuji Takasu",
+    "series": "Toradora!",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.5,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.7,
+      "contrast": 0.5,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "taiga-aisaka",
+    "name": "Taiga Aisaka",
+    "series": "Toradora!",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.5,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.7,
+      "contrast": 0.6,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "kousei-arima",
+    "name": "Kousei Arima",
+    "series": "Your Lie in April",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.8,
+      "contrast": 0.4,
+      "angularity": 0.3,
+      "glasses": 0.75,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "kaori-miyazono",
+    "name": "Kaori Miyazono",
+    "series": "Your Lie in April",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.3,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.75,
+      "contrast": 0.55,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.75
+    }
+  },
+  {
+    "id": "kyo-sohma",
+    "name": "Kyo Sohma",
+    "series": "Fruits Basket",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.5,
+      "hairDarkness": 0.15,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.65,
+      "contrast": 0.6,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "yuki-sohma",
+    "name": "Yuki Sohma",
+    "series": "Fruits Basket",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.65,
+      "symmetry": 0.85,
+      "contrast": 0.45,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "sawako-kuronuma",
+    "name": "Sawako Kuronuma",
+    "series": "Kimi ni Todoke",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.3,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.85,
+      "contrast": 0.55,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "yuki-cross",
+    "name": "Yuki Cross",
+    "series": "Vampire Knight",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.3,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.75,
+      "contrast": 0.5,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "zero-kiryu",
+    "name": "Zero Kiryu",
+    "series": "Vampire Knight",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.45,
+      "browWeight": 0.4,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.8,
+      "contrast": 0.65,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.25
+    }
+  },
+  {
+    "id": "kyoko-mogami",
+    "name": "Kyoko Mogami",
+    "series": "Skip Beat!",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.45,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.75,
+      "contrast": 0.6,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "jet-black",
+    "name": "Jet Black",
+    "series": "Cowboy Bebop",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.5,
+      "hairDarkness": 0.0,
+      "hairVolume": 0.0,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.7,
+      "contrast": 0.55,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "edward-wong",
+    "name": "Edward Wong (Radical Edward)",
+    "series": "Cowboy Bebop",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.25,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.7,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.4,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.4,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "nicholas-wolfwood",
+    "name": "Nicholas D. Wolfwood",
+    "series": "Trigun",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.4,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.75,
+      "contrast": 0.6,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "misato-katsuragi",
+    "name": "Misato Katsuragi",
+    "series": "Neon Genesis Evangelion",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.4,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.75,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "kaworu-nagisa",
+    "name": "Kaworu Nagisa",
+    "series": "Neon Genesis Evangelion",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.25,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.85,
+      "symmetry": 0.9,
+      "contrast": 0.55,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "ranma-saotome",
+    "name": "Ranma Saotome",
+    "series": "Ranma \u00bd",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.45,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.7,
+      "contrast": 0.6,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "doraemon",
+    "name": "Doraemon",
+    "series": "Doraemon",
+    "profile": {
+      "faceLength": 0.15,
+      "jawSharpness": 0.05,
+      "eyeNarrowness": 0.05,
+      "browWeight": 0.1,
+      "hairDarkness": 0.0,
+      "hairVolume": 0.0,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.95,
+      "contrast": 0.55,
+      "angularity": 0.05,
+      "glasses": 0.0,
+      "warmth": 0.85
+    }
+  },
+  {
+    "id": "nobita-nobi",
+    "name": "Nobita Nobi",
+    "series": "Doraemon",
+    "profile": {
+      "faceLength": 0.25,
+      "jawSharpness": 0.15,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.25,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.15,
+      "glasses": 0.8,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "astro-boy",
+    "name": "Astro Boy",
+    "series": "Astro Boy",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.25,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.95,
+      "contrast": 0.6,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "tuxedo-mask",
+    "name": "Tuxedo Mask",
+    "series": "Sailor Moon",
+    "profile": {
+      "faceLength": 0.55,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.35,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.65,
+      "symmetry": 0.85,
+      "contrast": 0.65,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "sailor-mars",
+    "name": "Sailor Mars",
+    "series": "Sailor Moon",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.45,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.8,
+      "contrast": 0.65,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "albedo",
+    "name": "Albedo",
+    "series": "Overlord",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.5,
+      "symmetry": 0.9,
+      "contrast": 0.6,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "naofumi-iwatani",
+    "name": "Naofumi Iwatani",
+    "series": "The Rising of the Shield Hero",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.5,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.7,
+      "contrast": 0.5,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "rudeus-greyrat",
+    "name": "Rudeus Greyrat",
+    "series": "Mushoku Tensei",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.3,
+      "hairDarkness": 0.4,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.75,
+      "contrast": 0.45,
+      "angularity": 0.25,
+      "glasses": 0.7,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "kazuma-satou",
+    "name": "Kazuma Satou",
+    "series": "KonoSuba",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.75,
+      "contrast": 0.5,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "megumin",
+    "name": "Megumin",
+    "series": "KonoSuba",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.35,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.55,
+      "contrast": 0.65,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "aqua",
+    "name": "Aqua",
+    "series": "KonoSuba",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.85,
+      "contrast": 0.55,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "milim-nava",
+    "name": "Milim Nava",
+    "series": "That Time I Got Reincarnated as a Slime",
+    "profile": {
+      "faceLength": 0.25,
+      "jawSharpness": 0.2,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.25,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.8,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.75,
+      "contrast": 0.6,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "goblin-slayer",
+    "name": "Goblin Slayer",
+    "series": "Goblin Slayer",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.6,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.3,
+      "hairDarkness": 0.0,
+      "hairVolume": 0.0,
+      "expressionNeutrality": 0.95,
+      "symmetry": 0.8,
+      "contrast": 0.55,
+      "angularity": 0.6,
+      "glasses": 0.0,
+      "warmth": 0.15
+    }
+  },
+  {
+    "id": "hanamichi-sakuragi",
+    "name": "Hanamichi Sakuragi",
+    "series": "Slam Dunk",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.55,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.65,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.6,
+      "contrast": 0.65,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "rukawa-kaede",
+    "name": "Rukawa Kaede",
+    "series": "Slam Dunk",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.5,
+      "browWeight": 0.3,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.85,
+      "symmetry": 0.75,
+      "contrast": 0.5,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.25
+    }
+  },
+  {
+    "id": "kuroko-tetsuya",
+    "name": "Kuroko Tetsuya",
+    "series": "Kuroko's Basketball",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.25,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.2,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.8,
+      "contrast": 0.35,
+      "angularity": 0.2,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "kagami-taiga",
+    "name": "Kagami Taiga",
+    "series": "Kuroko's Basketball",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.5,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.7,
+      "contrast": 0.65,
+      "angularity": 0.5,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "ryoma-echizen",
+    "name": "Ryoma Echizen",
+    "series": "The Prince of Tennis",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.3,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.5,
+      "symmetry": 0.7,
+      "contrast": 0.5,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "tsubasa-ozora",
+    "name": "Tsubasa Ozora",
+    "series": "Captain Tsubasa",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.35,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.7,
+      "contrast": 0.55,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.7
+    }
+  },
+  {
+    "id": "shinichi-izumi",
+    "name": "Shinichi Izumi",
+    "series": "Parasyte",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.35,
+      "hairDarkness": 0.6,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.75,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "akira-fudo",
+    "name": "Akira Fudo",
+    "series": "Devilman Crybaby",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.65,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.5,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.55,
+      "contrast": 0.65,
+      "angularity": 0.55,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "ryo-asuka",
+    "name": "Ryo Asuka",
+    "series": "Devilman Crybaby",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.25,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.85,
+      "symmetry": 0.9,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.2
+    }
+  },
+  {
+    "id": "rena-ryugu",
+    "name": "Rena Ryugu",
+    "series": "Higurashi: When They Cry",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.3,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "lucy",
+    "name": "Lucy",
+    "series": "Elfen Lied",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.85,
+      "contrast": 0.6,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.2
+    }
+  },
+  {
+    "id": "riko",
+    "name": "Riko",
+    "series": "Made in Abyss",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.35,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.75,
+      "contrast": 0.5,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "reg",
+    "name": "Reg",
+    "series": "Made in Abyss",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.25,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.25,
+      "hairDarkness": 0.4,
+      "hairVolume": 0.3,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.85,
+      "contrast": 0.5,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "emma",
+    "name": "Emma",
+    "series": "The Promised Neverland",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.4,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.75,
+      "contrast": 0.5,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "norman",
+    "name": "Norman",
+    "series": "The Promised Neverland",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.85,
+      "contrast": 0.45,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "madoka-kaname",
+    "name": "Madoka Kaname",
+    "series": "Puella Magi Madoka Magica",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.2,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.25,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.25,
+      "symmetry": 0.85,
+      "contrast": 0.5,
+      "angularity": 0.15,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "homura-akemi",
+    "name": "Homura Akemi",
+    "series": "Puella Magi Madoka Magica",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.35,
+      "hairDarkness": 0.95,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.85,
+      "contrast": 0.65,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.25
+    }
+  },
+  {
+    "id": "joker-akira-kurusu",
+    "name": "Joker (Akira Kurusu)",
+    "series": "Persona 5",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.35,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.8,
+      "contrast": 0.65,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "yu-narukami",
+    "name": "Yu Narukami",
+    "series": "Persona 4",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.75,
+      "symmetry": 0.85,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "katarina-claes",
+    "name": "Katarina Claes",
+    "series": "My Next Life as a Villainess: All Routes Lead to Doom!",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.3,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.3,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.75,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.8,
+      "contrast": 0.55,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "hori-kyoko",
+    "name": "Hori Kyoko",
+    "series": "Horimiya",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.35,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.8,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.55
+    }
+  },
+  {
+    "id": "miyamura-izumi",
+    "name": "Miyamura Izumi",
+    "series": "Horimiya",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.65,
+      "contrast": 0.5,
+      "angularity": 0.3,
+      "glasses": 0.5,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "hanako-kun",
+    "name": "Hanako-kun",
+    "series": "Toilet-bound Hanako-kun",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.25,
+      "browWeight": 0.3,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.7,
+      "contrast": 0.55,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.45
+    }
+  },
+  {
+    "id": "maple",
+    "name": "Maple",
+    "series": "Bofuri: I Don't Want to Get Hurt, so I'll Max Out My Defense.",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.2,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.25,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.25,
+      "glasses": 0.0,
+      "warmth": 0.65
+    }
+  },
+  {
+    "id": "cid-kagenou",
+    "name": "Cid Kagenou",
+    "series": "The Eminence in Shadow",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.35,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.5,
+      "symmetry": 0.75,
+      "contrast": 0.6,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.35
+    }
+  },
+  {
+    "id": "kiyotaka-ayanokoji",
+    "name": "Kiyotaka Ayanokoji",
+    "series": "Classroom of the Elite",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.35,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.8,
+      "symmetry": 0.75,
+      "contrast": 0.45,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "koro-sensei",
+    "name": "Koro-sensei",
+    "series": "Assassination Classroom",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.1,
+      "eyeNarrowness": 0.05,
+      "browWeight": 0.15,
+      "hairDarkness": 0.0,
+      "hairVolume": 0.0,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.9,
+      "contrast": 0.6,
+      "angularity": 0.1,
+      "glasses": 0.0,
+      "warmth": 0.7
+    }
+  },
+  {
+    "id": "nagisa-shiota",
+    "name": "Nagisa Shiota",
+    "series": "Assassination Classroom",
+    "profile": {
+      "faceLength": 0.35,
+      "jawSharpness": 0.25,
+      "eyeNarrowness": 0.2,
+      "browWeight": 0.25,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.5,
+      "symmetry": 0.8,
+      "contrast": 0.45,
+      "angularity": 0.2,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "yuri-nakamura",
+    "name": "Yuri Nakamura",
+    "series": "Angel Beats!",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.5,
+      "hairDarkness": 0.9,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.75,
+      "contrast": 0.6,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "tomoya-okazaki",
+    "name": "Tomoya Okazaki",
+    "series": "Clannad",
+    "profile": {
+      "faceLength": 0.45,
+      "jawSharpness": 0.45,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.4,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.45,
+      "symmetry": 0.7,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "nagisa-furukawa",
+    "name": "Nagisa Furukawa",
+    "series": "Clannad",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.2,
+      "eyeNarrowness": 0.15,
+      "browWeight": 0.25,
+      "hairDarkness": 0.45,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.8,
+      "contrast": 0.4,
+      "angularity": 0.15,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "menma",
+    "name": "Menma",
+    "series": "Anohana: The Flower We Saw That Day",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.15,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.2,
+      "hairDarkness": 0.3,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.2,
+      "symmetry": 0.85,
+      "contrast": 0.35,
+      "angularity": 0.1,
+      "glasses": 0.0,
+      "warmth": 0.6
+    }
+  },
+  {
+    "id": "yui-hirasawa",
+    "name": "Yui Hirasawa",
+    "series": "K-On!",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.2,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.25,
+      "hairDarkness": 0.5,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.1,
+      "symmetry": 0.8,
+      "contrast": 0.5,
+      "angularity": 0.15,
+      "glasses": 0.0,
+      "warmth": 0.75
+    }
+  },
+  {
+    "id": "koyomi-araragi",
+    "name": "Koyomi Araragi",
+    "series": "Bakemonogatari",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.3,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.6,
+      "symmetry": 0.7,
+      "contrast": 0.55,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "hitagi-senjougahara",
+    "name": "Hitagi Senjougahara",
+    "series": "Bakemonogatari",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.5,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.35,
+      "hairDarkness": 0.7,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.7,
+      "symmetry": 0.85,
+      "contrast": 0.55,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "izaya-orihara",
+    "name": "Izaya Orihara",
+    "series": "Durarara!!",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.35,
+      "browWeight": 0.3,
+      "hairDarkness": 0.85,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.3,
+      "symmetry": 0.75,
+      "contrast": 0.6,
+      "angularity": 0.4,
+      "glasses": 0.0,
+      "warmth": 0.3
+    }
+  },
+  {
+    "id": "sora",
+    "name": "Sora",
+    "series": "No Game No Life",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.3,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.5,
+      "expressionNeutrality": 0.35,
+      "symmetry": 0.7,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "shiro",
+    "name": "Shiro",
+    "series": "No Game No Life",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.2,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.2,
+      "hairDarkness": 0.05,
+      "hairVolume": 0.6,
+      "expressionNeutrality": 0.55,
+      "symmetry": 0.85,
+      "contrast": 0.5,
+      "angularity": 0.2,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "decim",
+    "name": "Decim",
+    "series": "Death Parade",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.25,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.35,
+      "expressionNeutrality": 0.9,
+      "symmetry": 0.9,
+      "contrast": 0.5,
+      "angularity": 0.35,
+      "glasses": 0.0,
+      "warmth": 0.25
+    }
+  },
+  {
+    "id": "satoru-fujinuma",
+    "name": "Satoru Fujinuma",
+    "series": "Erased",
+    "profile": {
+      "faceLength": 0.4,
+      "jawSharpness": 0.4,
+      "eyeNarrowness": 0.3,
+      "browWeight": 0.35,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.45,
+      "expressionNeutrality": 0.4,
+      "symmetry": 0.7,
+      "contrast": 0.5,
+      "angularity": 0.3,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  },
+  {
+    "id": "saichi-sugimoto",
+    "name": "Saichi Sugimoto",
+    "series": "Golden Kamuy",
+    "profile": {
+      "faceLength": 0.5,
+      "jawSharpness": 0.55,
+      "eyeNarrowness": 0.4,
+      "browWeight": 0.5,
+      "hairDarkness": 0.8,
+      "hairVolume": 0.4,
+      "expressionNeutrality": 0.5,
+      "symmetry": 0.65,
+      "contrast": 0.55,
+      "angularity": 0.45,
+      "glasses": 0.0,
+      "warmth": 0.4
+    }
+  },
+  {
+    "id": "hitori-gotoh",
+    "name": "Hitori Gotoh",
+    "series": "Bocchi the Rock!",
+    "profile": {
+      "faceLength": 0.3,
+      "jawSharpness": 0.2,
+      "eyeNarrowness": 0.1,
+      "browWeight": 0.25,
+      "hairDarkness": 0.1,
+      "hairVolume": 0.55,
+      "expressionNeutrality": 0.15,
+      "symmetry": 0.65,
+      "contrast": 0.5,
+      "angularity": 0.2,
+      "glasses": 0.0,
+      "warmth": 0.5
+    }
+  }
 ]
