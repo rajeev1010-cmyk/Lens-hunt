@@ -17,23 +17,20 @@ object CharacterMatcher {
 
     private val MAX_DISTANCE = sqrt(FaceAxesExtractor.RELIABLE_AXES.size.toDouble())
 
-    fun findBestMatch(measured: MeasuredAxes, characters: List<CharacterEntry>): MatchResult? {
-        if (characters.isEmpty()) return null
+    fun findBestMatch(measured: MeasuredAxes, characters: List<CharacterEntry>): MatchResult? =
+        findTopMatches(measured, characters, limit = 1).firstOrNull()
 
-        var best: CharacterEntry? = null
-        var bestDistance = Double.MAX_VALUE
+    fun findTopMatches(measured: MeasuredAxes, characters: List<CharacterEntry>, limit: Int = 5): List<MatchResult> {
+        if (characters.isEmpty()) return emptyList()
 
-        for (character in characters) {
-            val d = distance(measured, character.profile)
-            if (d < bestDistance) {
-                bestDistance = d
-                best = character
+        return characters
+            .map { character -> character to distance(measured, character.profile) }
+            .sortedBy { it.second }
+            .take(limit)
+            .map { (character, dist) ->
+                val similarity = ((1.0 - (dist / MAX_DISTANCE)) * 100.0).coerceIn(0.0, 100.0)
+                MatchResult(character, similarity.toInt())
             }
-        }
-
-        val match = best ?: return null
-        val similarity = ((1.0 - (bestDistance / MAX_DISTANCE)) * 100.0).coerceIn(0.0, 100.0)
-        return MatchResult(match, similarity.toInt())
     }
 
     private fun distance(measured: MeasuredAxes, profile: VisualAxes): Double {

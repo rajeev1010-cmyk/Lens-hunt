@@ -28,7 +28,21 @@ data class CharacterEntry(
     val id: String,
     val name: String,
     val series: String,
-    val profile: VisualAxes = VisualAxes()
+    val designer: String = "",
+    val studio: String = "",
+    val franchise: String = "",
+    val collection: String = "",
+    val visualTraits: List<String> = emptyList(),
+    val designLanguage: List<String> = emptyList(),
+    val shapeLanguage: String = "",
+    val silhouette: String = "",
+    val archetype: String = "",
+    val temperament: String = "",
+    val keywords: List<String> = emptyList(),
+    val description: String = "",
+    val profile: VisualAxes = VisualAxes(),
+    val communicates: List<String> = emptyList(),
+    val through: List<String> = emptyList()
 )
 
 class CharactersRepository(private val context: Context) {

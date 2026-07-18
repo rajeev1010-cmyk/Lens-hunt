@@ -11,6 +11,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
+enum class UiStage { SCANNING, TOP_MATCHES, SHARE_CARD }
+
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val repository = CharactersRepository(application)
 
@@ -32,6 +34,23 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _matchError = MutableStateFlow<String?>(null)
     val matchError = _matchError.asStateFlow()
 
+    private val _uiStage = MutableStateFlow(UiStage.SCANNING)
+    val uiStage = _uiStage.asStateFlow()
+
+    private val _topMatches = MutableStateFlow<List<MatchResult>>(emptyList())
+    val topMatches = _topMatches.asStateFlow()
+
+    private val _capturedSelfie = MutableStateFlow<Bitmap?>(null)
+    val capturedSelfie = _capturedSelfie.asStateFlow()
+
+    private val _selectedMatch = MutableStateFlow<MatchResult?>(null)
+    val selectedMatch = _selectedMatch.asStateFlow()
+
+    // Freshest axes from the live analyzer, kept even while the per-frame
+    // debounce is active, so the shutter button always has something to work
+    // with the instant it's pressed.
+    private var lastMeasuredAxes: MeasuredAxes? = null
+
     init {
         viewModelScope.launch {
             _characters.value = repository.getCharacters()
@@ -52,6 +71,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
      * no network call, no face image ever leaves the device.
      */
     fun matchFace(axes: MeasuredAxes) {
+        lastMeasuredAxes = axes
         if (_isMatching.value) return
         if (_characters.value.isEmpty()) return
 
@@ -97,5 +117,33 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun clearMatchError() {
         _matchError.value = null
+    }
+
+    /** Shutter pressed: freezes the captured selfie and shows the top-5 candidates. */
+    fun onSelfieCaptured(bitmap: Bitmap) {
+        _capturedSelfie.value = bitmap
+        val axes = lastMeasuredAxes
+        if (axes == null) {
+            _matchError.value = "No face detected yet -- hold steady and try again."
+            return
+        }
+        val matches = CharacterMatcher.findTopMatches(axes, _characters.value, limit = 5)
+        if (matches.isEmpty()) {
+            _matchError.value = "No matches found."
+            return
+        }
+        _topMatches.value = matches
+        _uiStage.value = UiStage.TOP_MATCHES
+    }
+
+    fun selectMatch(result: MatchResult) {
+        _selectedMatch.value = result
+        _uiStage.value = UiStage.SHARE_CARD
+    }
+
+    fun dismissOverlay() {
+        _uiStage.value = UiStage.SCANNING
+        _topMatches.value = emptyList()
+        _selectedMatch.value = null
     }
 }
