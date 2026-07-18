@@ -1,6 +1,7 @@
 package com.example
 
 import android.app.Application
+import android.graphics.Bitmap
 import android.graphics.Rect
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
@@ -27,6 +28,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _isMatching = MutableStateFlow(false)
     val isMatching = _isMatching.asStateFlow()
+
+    private val _matchError = MutableStateFlow<String?>(null)
+    val matchError = _matchError.asStateFlow()
 
     init {
         viewModelScope.launch {
@@ -63,5 +67,35 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             delay(400)
             _isMatching.value = false
         }
+    }
+
+    /** Matches a single gallery-picked photo instead of a live camera frame. */
+    fun matchPhoto(bitmap: Bitmap) {
+        viewModelScope.launch {
+            _matchError.value = null
+            val face = try {
+                PhotoFaceDetector.detectFirstFace(bitmap)
+            } catch (e: Exception) {
+                null
+            }
+            if (face == null) {
+                _matchError.value = "No face found in that photo."
+                return@launch
+            }
+            val axes = FaceAxesExtractor.extract(face)
+            if (axes == null) {
+                _matchError.value = "Couldn't read enough detail from that face."
+                return@launch
+            }
+            val result = CharacterMatcher.findBestMatch(axes, _characters.value)
+            if (result != null) {
+                _matchedCharacter.value = result.character
+                _matchSimilarity.value = result.similarityPercent
+            }
+        }
+    }
+
+    fun clearMatchError() {
+        _matchError.value = null
     }
 }

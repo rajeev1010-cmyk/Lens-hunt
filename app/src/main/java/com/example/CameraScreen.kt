@@ -2,16 +2,21 @@ package com.example
 
 import android.Manifest
 import android.content.Context
-import android.graphics.Rect
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,16 +26,15 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
@@ -39,230 +43,269 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.isGranted
 import com.google.accompanist.permissions.rememberPermissionState
 import java.util.concurrent.Executors
-import kotlin.math.roundToInt
+import kotlin.coroutines.resume
+import kotlinx.coroutines.suspendCancellableCoroutine
+
+// Giant Hunt brand palette, sampled from selfie_screen.png (gold-on-black HUD).
+private val GiantHuntGold = Color(0xFFFFA800)
+private val GiantHuntGoldDim = Color(0xFFC9821A)
+private val GiantHuntBlack = Color(0xFF000000)
+private val GiantHuntCard = Color(0xFF141414)
+
+// Fractional bounds of the transparent viewfinder cutout in selfie_screen.png
+// (941x1672 source), used to align the live camera feed with the frame art.
+private const val CutoutLeftFrac = 74f / 941f
+private const val CutoutRightFrac = 864f / 941f
+private const val CutoutTopFrac = 456f / 1672f
+private const val CutoutBottomFrac = 1307f / 1672f
+
+private suspend fun Context.awaitCameraProvider(): ProcessCameraProvider =
+    suspendCancellableCoroutine { cont ->
+        val future = ProcessCameraProvider.getInstance(this)
+        future.addListener({ cont.resume(future.get()) }, ContextCompat.getMainExecutor(this))
+    }
 
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun CameraScreen(viewModel: MainViewModel) {
     val cameraPermissionState = rememberPermissionState(Manifest.permission.CAMERA)
+    val matchError by viewModel.matchError.collectAsState()
+    val matchedCharacter by viewModel.matchedCharacter.collectAsState()
+    val matchSimilarity by viewModel.matchSimilarity.collectAsState()
+    val context = LocalContext.current
 
-    Column(
+    var lensFacing by remember { mutableIntStateOf(CameraSelector.LENS_FACING_FRONT) }
+
+    val photoPickerLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.PickVisualMedia()
+    ) { uri ->
+        if (uri != null) {
+            val bitmap = loadBitmapFromUri(context, uri)
+            if (bitmap != null) {
+                viewModel.matchPhoto(bitmap)
+            } else {
+                Toast.makeText(context, "Couldn't load that photo.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    LaunchedEffect(matchError) {
+        matchError?.let {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+            viewModel.clearMatchError()
+        }
+    }
+
+    BoxWithConstraints(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF020617)) // slate-950
+            .background(GiantHuntBlack)
     ) {
-        TopBar()
-        
+        val cutoutLeft = maxWidth * CutoutLeftFrac
+        val cutoutTop = maxHeight * CutoutTopFrac
+        val cutoutWidth = maxWidth * (CutoutRightFrac - CutoutLeftFrac)
+        val cutoutHeight = maxHeight * (CutoutBottomFrac - CutoutTopFrac)
+
         Box(
             modifier = Modifier
-                .weight(1f)
-                .background(Color(0xFF0A0A0C))
+                .offset(x = cutoutLeft, y = cutoutTop)
+                .size(cutoutWidth, cutoutHeight)
         ) {
             if (cameraPermissionState.status.isGranted) {
-                CameraPreviewContent(viewModel)
+                CameraPreviewContent(viewModel, lensFacing)
             } else {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    Text("Camera permission required", color = Color.White)
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Button(onClick = { cameraPermissionState.launchPermissionRequest() }) {
-                        Text("Request Permission")
+                    Text("Camera permission required", color = Color.White, fontSize = 12.sp)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Button(
+                        onClick = { cameraPermissionState.launchPermissionRequest() },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = GiantHuntGold,
+                            contentColor = Color.Black
+                        )
+                    ) {
+                        Text("Allow")
                     }
                 }
             }
         }
-        
-        DataInsightSection()
-        BottomNav()
-    }
-}
 
-@Composable
-fun TopBar() {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Color(0xFF0F172A).copy(alpha = 0.5f))
-            .padding(horizontal = 16.dp, vertical = 12.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
+        Image(
+            painter = painterResource(id = R.drawable.selfie_screen),
+            contentDescription = null,
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.FillBounds
+        )
+
+        // Camera flip button, floating over the top-right of the viewfinder cutout.
         Box(
             modifier = Modifier
+                .offset(x = cutoutLeft + cutoutWidth - 48.dp, y = cutoutTop + 8.dp)
                 .size(40.dp)
-                .background(Color(0xFF4F46E5), CircleShape),
+                .background(GiantHuntBlack.copy(alpha = 0.6f), CircleShape)
+                .border(1.dp, GiantHuntGold.copy(alpha = 0.6f), CircleShape)
+                .clip(CircleShape)
+                .clickable {
+                    lensFacing = if (lensFacing == CameraSelector.LENS_FACING_FRONT) {
+                        CameraSelector.LENS_FACING_BACK
+                    } else {
+                        CameraSelector.LENS_FACING_FRONT
+                    }
+                },
             contentAlignment = Alignment.Center
         ) {
-            Icon(Icons.Outlined.Face, contentDescription = null, tint = Color.White)
+            Icon(Icons.Outlined.FlipCameraAndroid, contentDescription = "Switch camera", tint = GiantHuntGold)
         }
-        Spacer(Modifier.width(12.dp))
-        Column {
-            Text("ANIME LENS AI", color = Color(0xFFF1F5F9), fontWeight = FontWeight.Bold, fontSize = 14.sp, letterSpacing = (-0.5).sp)
-            Text("Real-time Scan Active", color = Color(0xFF818CF8), fontWeight = FontWeight.Medium, fontSize = 10.sp)
+
+        // Match result card, floating just below the viewfinder cutout.
+        if (matchedCharacter != null) {
+            Box(
+                modifier = Modifier
+                    .offset(x = cutoutLeft, y = cutoutTop + cutoutHeight + 12.dp)
+                    .width(cutoutWidth)
+                    .background(GiantHuntCard, RoundedCornerShape(20.dp))
+                    .border(1.dp, GiantHuntGold.copy(alpha = 0.5f), RoundedCornerShape(20.dp))
+                    .padding(16.dp)
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Box(
+                        modifier = Modifier
+                            .size(56.dp)
+                            .background(
+                                Brush.linearGradient(listOf(GiantHuntGold, GiantHuntGoldDim)),
+                                RoundedCornerShape(14.dp)
+                            ),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        val initials = matchedCharacter!!.name.split(" ")
+                            .mapNotNull { it.firstOrNull()?.toString() }
+                            .take(2).joinToString("").uppercase()
+                        Text(initials, color = Color.Black, fontSize = 20.sp, fontWeight = FontWeight.Black)
+                    }
+                    Spacer(Modifier.width(14.dp))
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            "MATCH" + (matchSimilarity?.let { " · $it%" } ?: ""),
+                            color = GiantHuntGold,
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            matchedCharacter!!.name,
+                            color = Color.White,
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            maxLines = 1
+                        )
+                        Text(
+                            matchedCharacter!!.series,
+                            color = Color(0xFFBBBBBB),
+                            fontSize = 12.sp,
+                            maxLines = 1
+                        )
+                    }
+                }
+            }
         }
-        Spacer(Modifier.weight(1f))
-        Box(
+
+        // Floating upload button.
+        FloatingActionButton(
+            onClick = {
+                photoPickerLauncher.launch(
+                    PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+                )
+            },
+            containerColor = GiantHuntGold,
+            contentColor = Color.Black,
             modifier = Modifier
-                .size(40.dp)
-                .background(Color.White.copy(alpha = 0.05f), CircleShape),
-            contentAlignment = Alignment.Center
+                .align(Alignment.BottomEnd)
+                .padding(24.dp)
         ) {
-            Icon(Icons.Outlined.Settings, contentDescription = null, tint = Color.White)
+            Icon(Icons.Outlined.PhotoLibrary, contentDescription = "Upload photo")
         }
     }
 }
 
 @Composable
-fun DataInsightSection() {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Color(0xFF0F172A))
-            .padding(16.dp),
-        horizontalArrangement = Arrangement.spacedBy(12.dp)
-    ) {
-        InsightCard(modifier = Modifier.weight(1f), icon = Icons.Outlined.Bolt, title = "LATENCY", value = "14ms")
-        InsightCard(modifier = Modifier.weight(1f), icon = Icons.Outlined.Storage, title = "DATABASE", value = "31")
-        InsightCard(modifier = Modifier.weight(1f), icon = Icons.Outlined.Psychology, title = "ENGINE", value = "V4.2")
-    }
-}
-
-@Composable
-fun InsightCard(modifier: Modifier, icon: ImageVector, title: String, value: String) {
-    Column(
-        modifier = modifier
-            .background(Color(0xFF1E293B).copy(alpha = 0.5f), RoundedCornerShape(16.dp))
-            .border(1.dp, Color.White.copy(alpha = 0.05f), RoundedCornerShape(16.dp))
-            .padding(12.dp)
-    ) {
-        Icon(icon, contentDescription = null, tint = Color(0xFF818CF8), modifier = Modifier.size(20.dp))
-        Spacer(Modifier.height(4.dp))
-        Text(title, color = Color(0xFF94A3B8), fontSize = 9.sp, fontWeight = FontWeight.Bold)
-        Text(value, color = Color(0xFFF1F5F9), fontSize = 14.sp)
-    }
-}
-
-@Composable
-fun BottomNav() {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(80.dp)
-            .background(Color(0xFF020617))
-            .border(1.dp, Color.White.copy(alpha = 0.05f), RectangleShape)
-            .padding(horizontal = 8.dp, vertical = 8.dp),
-        horizontalArrangement = Arrangement.SpaceAround,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        NavItem(icon = Icons.Outlined.PhotoCamera, label = "SCAN", tint = Color(0xFF6366F1))
-        NavItem(icon = Icons.Outlined.History, label = "LOG", tint = Color(0xFF64748B))
-        // Capture button
-        Box(
-            modifier = Modifier
-                .offset(y = (-20).dp)
-                .size(56.dp)
-                .background(Color(0xFF4F46E5), CircleShape)
-                .border(4.dp, Color(0xFF020617), CircleShape),
-            contentAlignment = Alignment.Center
-        ) {
-            Box(modifier = Modifier.size(24.dp).background(Color.White, CircleShape))
-        }
-        NavItem(icon = Icons.Outlined.Search, label = "WIKI", tint = Color(0xFF64748B))
-        NavItem(icon = Icons.Outlined.AccountCircle, label = "ME", tint = Color(0xFF64748B))
-    }
-}
-
-@Composable
-fun NavItem(icon: ImageVector, label: String, tint: Color) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Icon(icon, contentDescription = null, tint = tint)
-        Spacer(Modifier.height(4.dp))
-        Text(label, color = tint, fontSize = 10.sp, fontWeight = FontWeight.Bold, letterSpacing = 0.5.sp)
-    }
-}
-
-@Composable
-fun CameraPreviewContent(viewModel: MainViewModel) {
+fun CameraPreviewContent(viewModel: MainViewModel, lensFacing: Int) {
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
     val faceBounds by viewModel.faceBounds.collectAsState()
-    val matchedCharacter by viewModel.matchedCharacter.collectAsState()
-    val matchSimilarity by viewModel.matchSimilarity.collectAsState()
-    val isMatching by viewModel.isMatching.collectAsState()
 
     var imageWidth by remember { mutableIntStateOf(1) }
     var imageHeight by remember { mutableIntStateOf(1) }
-    var viewSize by remember { mutableStateOf(Size.Zero) }
 
-    Box(modifier = Modifier.fillMaxSize()) {
-        AndroidView(
-            factory = { ctx ->
-                val previewView = PreviewView(ctx).apply {
-                    layoutParams = ViewGroup.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT
-                    )
-                    scaleType = PreviewView.ScaleType.FILL_CENTER
-                }
+    val previewView = remember {
+        PreviewView(context).apply {
+            layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            scaleType = PreviewView.ScaleType.FILL_CENTER
+        }
+    }
+    val cameraExecutor = remember { Executors.newSingleThreadExecutor() }
 
-                val cameraProviderFuture = ProcessCameraProvider.getInstance(ctx)
-                cameraProviderFuture.addListener({
-                    val cameraProvider = cameraProviderFuture.get()
-                    val preview = Preview.Builder().build().also {
-                        it.setSurfaceProvider(previewView.surfaceProvider)
-                    }
+    DisposableEffect(Unit) {
+        onDispose { cameraExecutor.shutdown() }
+    }
 
-                    val imageAnalyzer = ImageAnalysis.Builder()
-                        .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
-                        .build()
-                        .also { analysis ->
-                            analysis.setAnalyzer(
-                                Executors.newSingleThreadExecutor(),
-                                FaceAnalyzer { face, imageProxy ->
-                                    val bounds = face.boundingBox
-                                    imageWidth = imageProxy.width
-                                    imageHeight = imageProxy.height
-                                    
-                                    val rotation = imageProxy.imageInfo.rotationDegrees
-                                    if (rotation == 90 || rotation == 270) {
-                                        imageWidth = imageProxy.height
-                                        imageHeight = imageProxy.width
-                                    }
+    LaunchedEffect(lensFacing) {
+        val cameraProvider = context.awaitCameraProvider()
+        val preview = Preview.Builder().build().also {
+            it.setSurfaceProvider(previewView.surfaceProvider)
+        }
+        val cameraSelector = CameraSelector.Builder().requireLensFacing(lensFacing).build()
+        val imageAnalyzer = ImageAnalysis.Builder()
+            .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+            .build()
+            .also { analysis ->
+                analysis.setAnalyzer(
+                    cameraExecutor,
+                    FaceAnalyzer { face, imageProxy ->
+                        val bounds = face.boundingBox
+                        imageWidth = imageProxy.width
+                        imageHeight = imageProxy.height
 
-                                    viewModel.updateFaceBounds(bounds)
-
-                                    val axes = FaceAxesExtractor.extract(face)
-                                    if (axes != null) {
-                                        viewModel.matchFace(axes)
-                                    }
-                                    imageProxy.close()
-                                }
-                            )
+                        val rotation = imageProxy.imageInfo.rotationDegrees
+                        if (rotation == 90 || rotation == 270) {
+                            imageWidth = imageProxy.height
+                            imageHeight = imageProxy.width
                         }
 
-                    try {
-                        cameraProvider.unbindAll()
-                        cameraProvider.bindToLifecycle(
-                            lifecycleOwner,
-                            CameraSelector.DEFAULT_FRONT_CAMERA,
-                            preview,
-                            imageAnalyzer
-                        )
-                    } catch (e: Exception) {
-                        e.printStackTrace()
+                        viewModel.updateFaceBounds(bounds)
+
+                        val axes = FaceAxesExtractor.extract(face)
+                        if (axes != null) {
+                            viewModel.matchFace(axes)
+                        }
+                        imageProxy.close()
                     }
-                }, ContextCompat.getMainExecutor(ctx))
+                )
+            }
 
-                previewView
-            },
-            modifier = Modifier.fillMaxSize()
-        )
+        try {
+            cameraProvider.unbindAll()
+            cameraProvider.bindToLifecycle(
+                lifecycleOwner,
+                cameraSelector,
+                preview,
+                imageAnalyzer
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 
-        // Overlay for Bounding Box
+    Box(modifier = Modifier.fillMaxSize()) {
+        AndroidView(factory = { previewView }, modifier = Modifier.fillMaxSize())
+
+        // Face-tracking HUD corners.
         Canvas(modifier = Modifier.fillMaxSize()) {
-            viewSize = size
             faceBounds?.let { bounds ->
                 val scaleX = size.width / imageWidth
                 val scaleY = size.height / imageHeight
@@ -270,114 +313,35 @@ fun CameraPreviewContent(viewModel: MainViewModel) {
                 val offsetX = (size.width - imageWidth * scale) / 2
                 val offsetY = (size.height - imageHeight * scale) / 2
 
-                val flippedLeft = imageWidth - bounds.right
-                val flippedRight = imageWidth - bounds.left
-
-                val mappedLeft = flippedLeft * scale + offsetX
+                // Only the front camera's analysis frames need a horizontal
+                // flip to match the (auto-mirrored) preview the user sees.
+                val mappedLeft: Float
+                val mappedRight: Float
+                if (lensFacing == CameraSelector.LENS_FACING_FRONT) {
+                    mappedLeft = (imageWidth - bounds.right) * scale + offsetX
+                    mappedRight = (imageWidth - bounds.left) * scale + offsetX
+                } else {
+                    mappedLeft = bounds.left * scale + offsetX
+                    mappedRight = bounds.right * scale + offsetX
+                }
                 val mappedTop = bounds.top * scale + offsetY
-                val mappedRight = flippedRight * scale + offsetX
                 val mappedBottom = bounds.bottom * scale + offsetY
 
-                val strokeWidth = 4.dp.toPx()
-                val cornerLength = 32.dp.toPx()
-                val color = Color(0xFF6366F1)
+                val strokeWidth = 3.dp.toPx()
+                val cornerLength = 24.dp.toPx()
+                val color = GiantHuntGold
 
-                // Top Left
-                drawLine(color, start = Offset(mappedLeft, mappedTop), end = Offset(mappedLeft + cornerLength, mappedTop), strokeWidth = strokeWidth)
-                drawLine(color, start = Offset(mappedLeft, mappedTop), end = Offset(mappedLeft, mappedTop + cornerLength), strokeWidth = strokeWidth)
+                drawLine(color, Offset(mappedLeft, mappedTop), Offset(mappedLeft + cornerLength, mappedTop), strokeWidth)
+                drawLine(color, Offset(mappedLeft, mappedTop), Offset(mappedLeft, mappedTop + cornerLength), strokeWidth)
 
-                // Top Right
-                drawLine(color, start = Offset(mappedRight, mappedTop), end = Offset(mappedRight - cornerLength, mappedTop), strokeWidth = strokeWidth)
-                drawLine(color, start = Offset(mappedRight, mappedTop), end = Offset(mappedRight, mappedTop + cornerLength), strokeWidth = strokeWidth)
+                drawLine(color, Offset(mappedRight, mappedTop), Offset(mappedRight - cornerLength, mappedTop), strokeWidth)
+                drawLine(color, Offset(mappedRight, mappedTop), Offset(mappedRight, mappedTop + cornerLength), strokeWidth)
 
-                // Bottom Left
-                drawLine(color, start = Offset(mappedLeft, mappedBottom), end = Offset(mappedLeft + cornerLength, mappedBottom), strokeWidth = strokeWidth)
-                drawLine(color, start = Offset(mappedLeft, mappedBottom), end = Offset(mappedLeft, mappedBottom - cornerLength), strokeWidth = strokeWidth)
+                drawLine(color, Offset(mappedLeft, mappedBottom), Offset(mappedLeft + cornerLength, mappedBottom), strokeWidth)
+                drawLine(color, Offset(mappedLeft, mappedBottom), Offset(mappedLeft, mappedBottom - cornerLength), strokeWidth)
 
-                // Bottom Right
-                drawLine(color, start = Offset(mappedRight, mappedBottom), end = Offset(mappedRight - cornerLength, mappedBottom), strokeWidth = strokeWidth)
-                drawLine(color, start = Offset(mappedRight, mappedBottom), end = Offset(mappedRight, mappedBottom - cornerLength), strokeWidth = strokeWidth)
-            }
-        }
-
-        // Tag UI relative to bounding box
-        if (faceBounds != null && viewSize != Size.Zero) {
-            val scaleX = viewSize.width / imageWidth
-            val scaleY = viewSize.height / imageHeight
-            val scale = maxOf(scaleX, scaleY)
-            val offsetX = (viewSize.width - imageWidth * scale) / 2
-            val offsetY = (viewSize.height - imageHeight * scale) / 2
-
-            val flippedLeft = imageWidth - faceBounds!!.right
-            val flippedRight = imageWidth - faceBounds!!.left
-            val mappedRight = flippedRight * scale + offsetX
-            val mappedTop = faceBounds!!.top * scale + offsetY
-
-            if (isMatching || matchedCharacter != null) {
-                Box(
-                    modifier = Modifier
-                        .offset { 
-                            IntOffset(
-                                x = mappedRight.roundToInt() + 16,
-                                y = mappedTop.roundToInt()
-                            )
-                        }
-                        .background(Color(0xFF4F46E5), RoundedCornerShape(16.dp))
-                        .border(1.dp, Color.White.copy(alpha = 0.2f), RoundedCornerShape(16.dp))
-                        .padding(horizontal = 12.dp, vertical = 6.dp)
-                ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(
-                            text = if (matchedCharacter != null) {
-                                "MATCH FOUND" + (matchSimilarity?.let { " · $it%" } ?: "")
-                            } else "ANALYZING",
-                            color = Color.White,
-                            fontSize = 12.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Spacer(Modifier.width(8.dp))
-                        Box(modifier = Modifier.size(8.dp).background(Color(0xFF4ADE80), CircleShape))
-                    }
-                }
-            }
-        }
-
-        if (matchedCharacter != null) {
-            Box(
-                modifier = Modifier
-                    .align(Alignment.BottomCenter)
-                    .fillMaxWidth()
-                    .padding(16.dp)
-                    .background(Color.White, RoundedCornerShape(32.dp))
-                    .border(1.dp, Color(0xFFE0E7FF), RoundedCornerShape(32.dp))
-                    .padding(20.dp)
-            ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Box(
-                        modifier = Modifier
-                            .size(64.dp)
-                            .background(Brush.linearGradient(listOf(Color(0xFF6366F1), Color(0xFF9333EA))), RoundedCornerShape(16.dp)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        val initials = matchedCharacter!!.name.split(" ").mapNotNull { it.firstOrNull()?.toString() }.take(2).joinToString("").uppercase()
-                        Text(initials, color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.Black)
-                    }
-                    Spacer(Modifier.width(16.dp))
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text("DETECTED CHARACTER", color = Color(0xFF64748B), fontSize = 10.sp, fontWeight = FontWeight.Bold)
-                        Text(matchedCharacter!!.name, color = Color(0xFF0F172A), fontSize = 18.sp, fontWeight = FontWeight.ExtraBold, maxLines = 1)
-                        Text(matchedCharacter!!.series, color = Color(0xFF4F46E5), fontSize = 12.sp, fontWeight = FontWeight.Medium, maxLines = 1)
-                    }
-                    Spacer(Modifier.width(16.dp))
-                    Box(
-                        modifier = Modifier
-                            .size(48.dp)
-                            .background(Color(0xFFEEF2FF), RoundedCornerShape(16.dp)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(Icons.Outlined.Share, contentDescription = null, tint = Color(0xFF4F46E5))
-                    }
-                }
+                drawLine(color, Offset(mappedRight, mappedBottom), Offset(mappedRight - cornerLength, mappedBottom), strokeWidth)
+                drawLine(color, Offset(mappedRight, mappedBottom), Offset(mappedRight, mappedBottom - cornerLength), strokeWidth)
             }
         }
     }
